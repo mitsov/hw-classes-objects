@@ -1,68 +1,26 @@
-package social.model
+import social.model.Comments
+import social.model.Likes
+import social.model.Reposts
+import java.util.*
 
-data class Post (
-    val id: Int,
-    val ownerId: Int,
-    val fromId: Int,
-    val createdBy: Int,
-    val text: String,
-    val replyOwnerId: Int,
-    val replyPostId: Int,
-    val friendsOnly: Int,
-    val postType: String,
-    val singerId: Int,
-    val canPin: Int,
-    val canDelete: Int,
-    val isPinned: Int,
-    val markedAsAds: Int,
-    val isFavorite: Boolean,
-    val postponedId: Int
-)
-{
-
-    class Comments (
-        val count: Int,
-        val canPost: Int,
-        val groupsCanPost: Int,
-        val canClose: Boolean,
-        val canOpen: Boolean
-    )
- { }
-
-  class Likes (
-    val count: Int,
-    val userLikes: Int,
-    val canLike: Int,
-    val canPublish: Int
-)
-{}
-
-    class Response(
-        val count: Int,
-        val userLikes: Int,
-        val canLike: Int,
-        val canPublish: Int
-    )
-    {}
-
-    class Reports (
-        val count: Int,
-        val userReposted: Int
-    )
-    {}
-
-    class Views (
-        val count: Int
-    )
-    {}
-
-    class Geo (
-        val type: String,
-        val coordinates: String
-    )
-    {
-        companion object place
-    }
-
+class Post(val id: Int,
+           val ownerID: Int,
+           val fromID: Int,
+           val createdBy: Int,
+           val date: Date,
+           val text: String,
+           val replyOwnerID: Int,
+           val replyPostID: Int,
+           val friendsOnly: Boolean,
+           val comments: Comments,
+           val likes: Likes,
+           val reposts: Reposts,
+           val viewsCount: Int,
+           val postType: String,
+           val canPin: Boolean,
+           val canDelete: Boolean,
+           val canEdit: Boolean,
+           val isPinned: Boolean
+){
 
 }

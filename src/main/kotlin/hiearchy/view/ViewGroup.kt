@@ -1,7 +1,8 @@
 package hiearchy.view
 
 class ViewGroup(): View() {
-    fun addView(title: TextView) {
-        val view = View();
+    lateinit var view: View
+    fun addView(view: View) {
+        this.view = View()
         }
     }

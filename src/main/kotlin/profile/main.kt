@@ -4,14 +4,17 @@ import profile.model.Profile
 
 fun main() {
 
-   println(Profile(
+      val profile = Profile(
       id = "1",
       login = "admin",
       firstname = "James",
       lastname = "Bond",
       status = "active",
       avatar = ""
-   ).fullname)
+   )
+
+
+   println ("My name is ${profile.fullname}")
 
    /* второй вариант
    val profile = Profile(

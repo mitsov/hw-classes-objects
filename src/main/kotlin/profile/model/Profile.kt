@@ -1,6 +1,6 @@
 package profile.model
 
-data class Profile (
+class Profile (
    val id: String,
    val login: String,
    val firstname: String,
@@ -9,8 +9,8 @@ data class Profile (
    val avatar: String
 )
 {
-   val fullname: String
-      get(){ return "$firstname $lastname" }
+   val fullname: String = "$firstname $lastname"
+   //get
 
    // второй вариант
    // override fun toString(): String = "Полное имя = $firstname $lastname"
